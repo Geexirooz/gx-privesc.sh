@@ -51,9 +51,10 @@ privileges_commands_1="id"
 privileges_1=$(id 2>/dev/null)
 print_output "User ID" "$privileges_commands_1" "$privileges_1" "$?" ""
 
-privileges_commands_2="sudo -l"
-privileges_2=$(sudo -l 2>&1)
-print_output "Sudo Privileges" "$privileges_commands_2" "$privileges_2" "$?" "$privileges_2"
+#do this manually for now until I find a good logic
+#privileges_commands_2="sudo -l"
+#privileges_2=$(sudo -l 2>&1)
+#print_output "Sudo Privileges" "$privileges_commands_2" "$privileges_2" "$?" "$privileges_2"
 
 privileges_commands_3="cat /etc/passwd"
 privileges_3=$(cat /etc/passwd 2>&1)
