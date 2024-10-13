@@ -119,11 +119,6 @@ lastlog_command="lastlog"
 lastlog_output=$(lastlog 2>&1)
 print_output "Last Login Information" "$lastlog_command" "$lastlog_output" "$?" "$lastlog_output"
 
-# Network routing table
-netstat_command="netstat -rn"
-netstat_output=$(netstat -rn 2>&1)
-print_output "Network Routing Table" "$netstat_command" "$netstat_output" "$?" "$netstat_output"
-
 # Route information
 route_command="route"
 route_output=$(route 2>&1)
