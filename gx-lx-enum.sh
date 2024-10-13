@@ -207,8 +207,8 @@ listening_ports_output=$(ss -ntulp | grep LIST 2>&1)
 print_output "Listening Ports" "$listening_ports_command" "$listening_ports_output" "$?" "$listening_ports_output"
 
 # Installed packages by package manager
-installed_pkgs_command="apt list --installed | tr \"/\" \" \" | cut -d\" \" -f1,3 | sed 's/[0-9]://g' | column -t | tee -a installed_pkgs.list"
-installed_pkgs_output=$(apt list --installed | tr "/" " " | cut -d" " -f1,3 | sed 's/[0-9]://g' | column -t | tee -a installed_pkgs.list)
+installed_pkgs_command="apt list --installed | tr \"/\" \" \" | cut -d\" \" -f1,3 | sed 's/[0-9]://g' | column -t"
+installed_pkgs_output=$(apt list --installed | tr "/" " " | cut -d" " -f1,3 | sed 's/[0-9]://g' | column -t)
 print_output "Installed Packages by Package Manager" "$installed_pkgs_command" "$installed_pkgs_output" "$?" "$installed_pkgs_output"
 
 ###Commented out for further investigation as it outputs too much
